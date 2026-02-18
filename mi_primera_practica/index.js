@@ -1,5 +1,11 @@
-function Saludar (nombre) {
+const estudiante = {
+  nombre: 'Juan',
+  asignatura: "Desarrollo Móvil",
+  calificaciones: [4.0, 4.5, 4.2, 5.2],
+  estado: ''
+}
 
+function Saludar (nombre) {
   return `Hola ${nombre} bienvinido a esta clase`
 }
 
@@ -19,7 +25,15 @@ function obtenerEstado (promedio) {
   return "Excelente"
 }
 
+function mostrarReporte (estudiante) {
+  const prom = calcularPromedio(estudiante.calificaciones)
+  const estado = obtenerEstado(prom)
 
-obtenerEstado(calcularPromedio([4.0, 4.5, 4.2, 5.2]))
 
+}
+
+
+c
+
+mostrarReporte(estudiante)
 
