@@ -5,34 +5,37 @@
  * @format
  */
 
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { Text } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import Calendar from "./src/screens/Calendar";
 import Home from "./src/screens/Home";
 
-const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const App = () => {
 	return (
 		<SafeAreaProvider>
 			<NavigationContainer>
-				<Stack.Navigator>
-					<Stack.Screen
+				<Tab.Navigator>
+					<Tab.Screen
 						name="Home"
 						component={Home}
 						options={{
-							title: "Home screen",
+							title: "Home",
+							tabBarIcon: () => <Text>🏠</Text>,
 						}}
 					/>
-					<Stack.Screen
+					<Tab.Screen
 						name="Calendar"
 						component={Calendar}
 						options={{
-							title: "Calendar screen",
+							title: "Calendar",
+							tabBarIcon: () => <Text>📅</Text>,
 						}}
 					/>
-				</Stack.Navigator>
+				</Tab.Navigator>
 			</NavigationContainer>
 		</SafeAreaProvider>
 	);
